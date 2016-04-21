@@ -1,0 +1,6 @@
+1. 在docker命令中添加参数比如--dune,使得container起来之前执行规定的命令。
+2. 在docker daemon启动时检查cpu flags 是否有vmx标志。
+3. 在检查cpu具备vmx标志后，在初始化完成执行qemu-system-i386 -serial mon:stdio -hdb fs.img xv6.img -smp 2 -m 512,这里还要根据docker分配的网卡设置vm的网卡。
+4. 处理文件映射通过virtfs选项
+5. 修改docker attach命令到virsh console(待定)
+6. docker run 执行的命令以append参数的方式传递给qemu。
